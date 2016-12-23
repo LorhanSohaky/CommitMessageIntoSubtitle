@@ -19,11 +19,6 @@ Criar um algoritmo que pegue os textos dos *commits* e gere um arquivo de legend
 - O programa gera como saída um arquivo com as legendas.
 - O programa procura pelas *tags* `<date>`,`</date>`,`<msg>` e `</msg>`.
 
-### COMO USAR:
- `int main( int argc, char const *argv[] )`:
-  - `argv[1]`: nome do arquivo de LOG em XML.
-  -`argv[2]`: nome do arquivo em que devem ser escritas as legendas.
-
 #### COMO COMPILAR:
 `$ make`
 

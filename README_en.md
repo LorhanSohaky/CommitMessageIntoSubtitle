@@ -19,11 +19,6 @@ Create an algorithm that takes the *commits* texts and generates a subtitle file
 - The program generates as output a file with the subtitles.
 - The program looks for *tags* `<date>`, `</ date>`, `<msg>` and `</ msg>`.
 
-### HOW TO USE:
- `int main( int argc, char const *argv[] )`:
-  - `argv[1]`: name of the XML LOG file.
-  -`argv[2]`: name of the file in which the subtitles should be written.
-
 #### HOW TO COMPILE:
 `$ make`
 
