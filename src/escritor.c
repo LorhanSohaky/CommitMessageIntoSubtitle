@@ -191,9 +191,15 @@ int search_limit_in_string(char *string){
             strchr(string,'.')
         );
     }else{//Git
-        return calculate_index(string,
-            strrchr(string,'-')
-        );
+        if(strrchr(string,'+')!=NULL){
+            return calculate_index(string,
+                strrchr(string,'+')
+            );
+        }else if(strrchr(string,'-')!=NULL){
+            return calculate_index(string,
+                strrchr(string,'-')
+            );
+        }
     }
 }
 
