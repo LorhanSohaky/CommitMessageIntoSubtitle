@@ -41,6 +41,13 @@ int main(int argc, char *argv[]){
 
     //Verify if can open the files
     if(input_file==NULL || output_file==NULL){
+    	if(input_file){
+    		fclose(input_file);
+    	}
+    	
+    	if(output_file){
+    		fclose(output_file);
+    	}
         printf("\nERROR! Could open the files.\n");
         return 0;
     }
