@@ -29,5 +29,5 @@ Create an algorithm that takes the *commits* texts and generates a subtitle file
 
 **It serves only to generate the caption, not to generate the Gource.**
 
-- Git: `git log --pretty=format:'<date>%cI</date>%n<msg>%b</msg>' > <output_file>`
+- Git: `git log --pretty=format:'<date>%cI</date>%n<msg>%B</msg>' --reverse > <output_file>`
 - SVN: `svn log <repository> -r 1:HEAD --xml --verbose > <output_file>`

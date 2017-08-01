@@ -29,5 +29,5 @@ Criar um algoritmo que pegue os textos dos *commits* e gere um arquivo de legend
 
 **Serve apenas para gerar a legenda, não para gerar o Gource.**
 
-- Git: `git log --pretty=format:'<date>%cI</date>%n<msg>%b</msg>' > <output_file>`
+- Git: `git log --pretty=format:'<date>%cI</date>%n<msg>%B</msg>' --reverse > <output_file>`
 - SVN: `svn log <repository> -r 1:HEAD --xml --verbose > <output_file>`
