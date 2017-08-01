@@ -22,58 +22,59 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
-#include <stdbool.h>
 
 #define STRING_SIZE 3000
 
-//Defines
-static char *OPEN_MSG="<msg>";
-static char *CLOSE_MSG="</msg>";
-static char *OPEN_DATE="<date>";
-static char *CLOSE_DATE="</date>";
+// Defines
+static char *OPEN_MSG = "<msg>";
+static char *CLOSE_MSG = "</msg>";
+static char *OPEN_DATE = "<date>";
+static char *CLOSE_DATE = "</date>";
 
-typedef struct{
+typedef struct {
     int open_tag;
     int close_tag;
 } _position;
 
-typedef struct{
+typedef struct {
     _position date;
     _position msg;
 } _subtitle;
 
-_position search_open_and_close_tag_in_string(FILE *file,char *string, char *open_tag, char *close_tag);
-int search_tag_in_string(char *tag, char *string);
-int search_limit_in_string(char *string);
-_subtitle search_tags_in_file(FILE *file);
+_position
+search_open_and_close_tag_in_string( FILE *file, char *string, char *open_tag, char *close_tag );
+int search_tag_in_string( char *tag, char *string );
+int search_limit_in_string( char *string );
+_subtitle search_tags_in_file( FILE *file );
 
-void write_in_file(FILE *input_file,FILE *output_file, _subtitle sub);
-void write_date_in_file(FILE *file, time_t date);
-void write_msg_in_file(FILE *file, char *msg);
-void write_break_line(FILE *file);
+void write_in_file( FILE *input_file, FILE *output_file, _subtitle sub );
+void write_date_in_file( FILE *file, time_t date );
+void write_msg_in_file( FILE *file, char *msg );
+void write_break_line( FILE *file );
 
-void prepare_date_to_write(char *str_date,_position pos);
-void prepare_msg_to_write(char *str_msg, _position pos);
+void prepare_date_to_write( char *str_date, _position pos );
+void prepare_msg_to_write( char *str_msg, _position pos );
 
-void replace_break_line_into_space( char *string);
+void replace_break_line_into_space( char *string );
 
-void init__subtitle(_subtitle *sub);
-void init__position(_position *pos);
+void init__subtitle( _subtitle *sub );
+void init__position( _position *pos );
 
-bool is__position_OK(_position *pos);
-bool is__subtitle_OK(_subtitle *sub);
-bool is_valid_position(int position);
+bool is__position_OK( _position *pos );
+bool is__subtitle_OK( _subtitle *sub );
+bool is_valid_position( int position );
 
-void set__position(_position *from, _position *to);
+void set__position( _position *from, _position *to );
 
-int calculate_index(char *initial_position,char *position);
+int calculate_index( char *initial_position, char *position );
 
-void jump_to_end_of_tag(FILE *file,int position, char *tag);
-void jump_to_position(FILE *file,int position,int origin);
-int get_current_position_in_file(FILE *file);
-int get_the_new_position(FILE *file, char *string);
+void jump_to_end_of_tag( FILE *file, int position, char *tag );
+void jump_to_position( FILE *file, int position, int origin );
+int get_current_position_in_file( FILE *file );
+int get_the_new_position( FILE *file, char *string );
 
-time_t string_to_timet(const char *string);
+time_t string_to_timet( const char *string );
