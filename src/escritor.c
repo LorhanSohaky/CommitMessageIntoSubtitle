@@ -83,7 +83,8 @@ _subtitle search_tags_in_file( FILE *file ) {
         set__position( &tmp, &sub.date );
         tmp = search_open_and_close_tag_in_string( file, string, OPEN_MSG, CLOSE_MSG );
         set__position( &tmp, &sub.msg );
-        if( string[strlen( string ) - 1] != '\n' ) { // To solve a error when a tag is fragmented
+        if( string[strlen( string ) - 1] != '\n' &&
+            !feof( file ) ) { // To solve a error when a tag is fragmented
             jump_to_position( file, -1, SEEK_CUR );
         }
 
