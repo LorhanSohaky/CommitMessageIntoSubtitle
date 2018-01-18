@@ -1,6 +1,6 @@
 ## Commit Message Into Subtitle
 
-###Por que eu fiz isso?
+### POR QUAL MOTIVO EU FIZ ISSO?
 Embora o Gource facilite a visualização de todas as modificações que ocorreram em um projeto, dentro de um controle, sem legenda a tarefa ainda sim é um pouco complicada. Por isso criei esse programa, que ele pega os textos dos *commits*.
 
 ### LICENÇA:
